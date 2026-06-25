@@ -573,7 +573,7 @@ img {
     position: relative;
 }
 
-/* Увеличение области нажатия на точки пагинации (Fitts's Law) */
+/* Увеличение области нажатия на точки пагинации */
 .gallery__dot::after {
     content: '';
     position: absolute;
@@ -764,17 +764,37 @@ img {
         padding: 0 16px;
     }
 
-    /* Скрываем четные строки бегущей строки на мобильных для экономии места */
+    /* Скрываем часть бегущих строк на мобильных */
     .hero__marquee .marquee-row:nth-child(even) {
-        display: none;
+        display: none !important;
+    }
+
+    /* Оптимизация расположения блоков на первом экране на мобильных */
+    .hero {
+        min-height: auto !important;
+        padding: 100px 16px 40px !important;
     }
 
     .hero__product {
-        margin: 12px 0;
+        margin: 16px 0 !important;
+    }
+
+    .hero__product-img {
+        width: 180px !important;
     }
 
     .hero__cta {
-        margin-top: 12px;
+        margin-top: 16px !important;
+    }
+
+    .hero__title {
+        font-size: 2rem !important;
+        margin-bottom: 12px !important;
+    }
+
+    .hero__subtitle {
+        font-size: 0.95rem !important;
+        max-width: 100% !important;
     }
 
     .nav__toggle {
@@ -841,12 +861,13 @@ img {
         max-width: 180px;
     }
 
+    /* Гарантированный сброс контраста на планшетах */
     .marquee-track {
-        gap: 24px;
+        gap: 24px !important;
     }
 
     .marquee-track span {
-        color: rgba(255, 255, 255, 0.03);
+        color: rgba(255, 255, 255, 0.02) !important;
     }
 
     .about__features {
@@ -882,85 +903,84 @@ img {
     .footer .logo__img {
         height: 40px;
     }
-}
 
-/* ============================================
-   Responsive — 640px (Безопасный перевод таблицы в Flex-карточки)
-   ============================================ */
-@media (max-width: 640px) {
+    /* Мобильный вид таблицы (карточки) применяется ко всем планшетам и телефонам */
     .menu__table-wrapper {
-        border: none;
-        border-radius: 0;
-        background: transparent;
-        margin: 0;
+        border: none !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        overflow: visible !important;
     }
 
     .menu__table, 
     .menu__table thead, 
     .menu__table tbody {
-        display: block;
-        width: 100%;
+        display: block !important;
+        width: 100% !important;
+        min-width: 0 !important; /* Важный сброс десктопного min-width: 600px */
+        border-collapse: collapse !important;
     }
 
     .menu__table thead {
-        display: none;
+        display: none !important;
     }
 
-    /* На мобильных переключаем tr на flex-модель, чтобы избежать сбоев relative-позиционирования */
+    /* Надежная верстка строк в виде блоков без использования absolute для основного текста */
     .menu__table tbody tr {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: baseline;
-        justify-content: space-between;
-        background: #111111;
-        border: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: 12px;
-        margin-bottom: 16px;
-        padding: 18px;
-        transition: border-color 0.3s ease, background-color 0.3s ease;
+        display: block !important;
+        width: 100% !important;
+        background: #111111 !important;
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        border-radius: 12px !important;
+        margin-bottom: 16px !important;
+        padding: 20px 100px 20px 20px !important; /* 100px справа зарезервировано под цену */
+        position: relative !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
     }
 
     .menu__table tbody tr:hover {
-        background: rgba(230, 57, 70, 0.04);
-        border-color: rgba(230, 57, 70, 0.2);
+        background: rgba(230, 57, 70, 0.04) !important;
+        border-color: rgba(230, 57, 70, 0.2) !important;
     }
 
     .menu__table tbody tr:last-child {
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
     }
 
     .menu__table td {
+        display: block !important;
+        width: 100% !important;
         padding: 0 !important;
-        border: none;
+        border: none !important;
+        box-sizing: border-box !important;
     }
 
-    /* Используем Flexbox order для независимого расположения элементов без багов наложения */
     .menu__dish {
-        order: 1;
-        width: calc(100% - 90px);
-        font-size: 1.0625rem;
-        font-weight: 800;
-        color: #ffffff;
-        white-space: normal;
-    }
-
-    .menu__price {
-        order: 2;
-        width: 80px;
-        font-size: 1.1875rem;
-        font-weight: 900;
-        color: #e63946;
-        text-align: right;
-        white-space: nowrap;
+        font-size: 1.0625rem !important;
+        font-weight: 800 !important;
+        color: #ffffff !important;
+        margin-bottom: 6px !important;
+        white-space: normal !important;
     }
 
     .menu__desc {
-        order: 3;
-        width: 100%;
-        font-size: 0.875rem;
-        color: rgba(255, 255, 255, 0.55);
-        line-height: 1.4;
-        margin-top: 8px;
+        font-size: 0.875rem !important;
+        color: rgba(255, 255, 255, 0.55) !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Цена размещается абсолютно в зарезервированной зоне 100px справа */
+    .menu__price {
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+        width: auto !important;
+        font-size: 1.1875rem !important;
+        font-weight: 900 !important;
+        color: #e63946 !important;
+        text-align: right !important;
+        white-space: nowrap !important;
     }
 }
 
@@ -969,18 +989,18 @@ img {
    ============================================ */
 @media (max-width: 480px) {
     .logo__img {
-        height: 42px;
+        height: 42px !important;
         max-width: 170px;
     }
 
     .hero__product-img {
-        width: 240px;
+        width: 170px !important;
     }
 
     .marquee-track span {
-        font-size: 2.2rem;
-        letter-spacing: 5px;
-        color: rgba(255, 255, 255, 0.03);
+        font-size: 2.2rem !important;
+        letter-spacing: 5px !important;
+        color: rgba(255, 255, 255, 0.02) !important;
     }
 
     .gallery__slide {
@@ -1006,25 +1026,25 @@ img {
     }
 
     .logo__img {
-        height: 38px;
+        height: 38px !important;
         max-width: 150px;
     }
 
     .hero__product-img {
-        width: 200px;
+        width: 150px !important;
     }
 
     .marquee-track span {
-        font-size: 1.7rem;
-        letter-spacing: 3px;
-        color: rgba(255, 255, 255, 0.03);
+        font-size: 1.7rem !important;
+        letter-spacing: 3px !important;
+        color: rgba(255, 255, 255, 0.02) !important;
     }
 
     .hero__title {
-        font-size: 1.875rem;
+        font-size: 1.875rem !important;
     }
 
     .hero__subtitle {
-        font-size: 0.875rem;
+        font-size: 0.875rem !important;
     }
 }
