@@ -228,6 +228,7 @@ img {
 
 .marquee-track {
     display: inline-flex;
+    flex-wrap: nowrap;
     gap: 48px;
     will-change: transform;
 }
@@ -315,6 +316,7 @@ img {
     letter-spacing: 5px;
     margin-bottom: 18px;
     color: #ffffff;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
 .hero__subtitle {
@@ -324,6 +326,7 @@ img {
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.5;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 /* ============================================
@@ -567,7 +570,7 @@ img {
     cursor: pointer;
     transition: all 0.3s ease;
     padding: 0;
-    position: relative; /* Для расширения области нажатия */
+    position: relative;
 }
 
 /* Увеличение области нажатия на точки пагинации (Fitts's Law) */
@@ -660,7 +663,7 @@ img {
     border: none;
     width: 100%;
     height: 420px;
-    pointer-events: none; /* Заблокировано по умолчанию */
+    pointer-events: none;
     transition: filter 0.3s ease;
 }
 
@@ -808,7 +811,7 @@ img {
         transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 999;
         border-left: 1px solid rgba(255, 255, 255, 0.06);
-        overflow-y: auto; /* Прокрутка на случай переворота экрана в альбом */
+        overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
 
@@ -836,6 +839,14 @@ img {
     .header--scrolled .logo__img {
         height: 44px !important;
         max-width: 180px;
+    }
+
+    .marquee-track {
+        gap: 24px;
+    }
+
+    .marquee-track span {
+        color: rgba(255, 255, 255, 0.03);
     }
 
     .about__features {
@@ -874,7 +885,7 @@ img {
 }
 
 /* ============================================
-   Responsive — 640px (Перевод таблицы в карточки)
+   Responsive — 640px (Безопасный перевод таблицы в Flex-карточки)
    ============================================ */
 @media (max-width: 640px) {
     .menu__table-wrapper {
@@ -886,24 +897,26 @@ img {
 
     .menu__table, 
     .menu__table thead, 
-    .menu__table tbody, 
-    .menu__table tr, 
-    .menu__table td {
+    .menu__table tbody {
         display: block;
         width: 100%;
     }
 
     .menu__table thead {
-        display: none; /* Скрываем десктопную шапку */
+        display: none;
     }
 
+    /* На мобильных переключаем tr на flex-модель, чтобы избежать сбоев relative-позиционирования */
     .menu__table tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
         background: #111111;
         border: 1px solid rgba(255, 255, 255, 0.05);
         border-radius: 12px;
         margin-bottom: 16px;
         padding: 18px;
-        position: relative;
         transition: border-color 0.3s ease, background-color 0.3s ease;
     }
 
@@ -919,32 +932,35 @@ img {
     .menu__table td {
         padding: 0 !important;
         border: none;
-        text-align: left;
     }
 
+    /* Используем Flexbox order для независимого расположения элементов без багов наложения */
     .menu__dish {
+        order: 1;
+        width: calc(100% - 90px);
         font-size: 1.0625rem;
         font-weight: 800;
-        margin-bottom: 6px;
-        padding-right: 75px; /* Резервируем место под цену */
+        color: #ffffff;
         white-space: normal;
     }
 
-    .menu__desc {
-        font-size: 0.875rem;
-        color: rgba(255, 255, 255, 0.55);
-        line-height: 1.4;
-        padding-right: 75px;
-    }
-
     .menu__price {
-        position: absolute;
-        top: 18px;
-        right: 18px;
+        order: 2;
+        width: 80px;
         font-size: 1.1875rem;
         font-weight: 900;
         color: #e63946;
         text-align: right;
+        white-space: nowrap;
+    }
+
+    .menu__desc {
+        order: 3;
+        width: 100%;
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.55);
+        line-height: 1.4;
+        margin-top: 8px;
     }
 }
 
@@ -964,6 +980,7 @@ img {
     .marquee-track span {
         font-size: 2.2rem;
         letter-spacing: 5px;
+        color: rgba(255, 255, 255, 0.03);
     }
 
     .gallery__slide {
@@ -972,7 +989,7 @@ img {
     }
 
     .gallery__btn {
-        display: none; /* Управление только свайпами на малых экранах */
+        display: none;
     }
 }
 
@@ -1000,6 +1017,7 @@ img {
     .marquee-track span {
         font-size: 1.7rem;
         letter-spacing: 3px;
+        color: rgba(255, 255, 255, 0.03);
     }
 
     .hero__title {
