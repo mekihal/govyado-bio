@@ -380,6 +380,30 @@
             price: 150
         },
         {
+            id: 'sn_potato_cones',
+            category: 'snacks',
+            title: 'Картофельные конусы',
+            description: 'Хрустящие картофельные конусы с аппетитной панировкой.',
+            image: 'assets/images/potatocones.webp',
+            price: 150
+        },
+        {
+            id: 'sn_hashbraun',
+            category: 'snacks',
+            title: 'Картофельные хэшбраун (3 шт.)',
+            description: 'Хрустящие картофельные хэшбраун с золотистой корочкой.',
+            image: 'assets/images/hashbraun.webp',
+            price: 130
+        },
+        {
+            id: 'sn_chickenpopcorn',
+            category: 'snacks',
+            title: 'Куриные попкорны',
+            description: 'Нежные кусочки куриного филе в хрустящей панировке.',
+            image: 'assets/images/chickenpopcorn.webp',
+            price: 150
+        },
+        {
             id: 'sn_shrimps_klyar',
             category: 'snacks',
             title: 'Креветки в кляре',
