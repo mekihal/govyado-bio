@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Шапка -->
     <header class="header">
         <div class="nav__backdrop"></div>
         <div class="header__inner">
@@ -34,13 +34,13 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Легенда -->
     <section class="hero" id="hero">
         <div class="hero__bg">
             <div class="hero__bg-overlay"></div>
         </div>
 
-        <!-- Seamless dynamic scrolling backgrounds -->
+        <!-- Задник с скроллом -->
         <div class="hero__marquee">
             <div class="marquee-row marquee-row--left">
                 <div class="marquee-track">
@@ -74,25 +74,25 @@
             </div>
         </div>
 
-        <!-- Dynamic Product Motion Composition -->
+        <!-- Композиция продуктов -->
         <div class="hero__product-wrapper">
-            <!-- Background floats (behind shawarma) -->
+            <!-- За шавухой -->
             <img src="assets/images/tea.webp" class="hero__float hero__float--bg float-tea" alt="Чай">
             <img src="assets/images/coffee.webp" class="hero__float hero__float--bg float-coffee" alt="Кофе">
 
-            <!-- Simulated Fire effects under product -->
+            <!-- Анимация огня -->
             <div class="hero__fire-glow"></div>
             <div class="hero__fire-sparks"></div>
 
-            <!-- Main Central Product -->
+            <!-- Шавуха :) -->
             <img src="assets/images/shawarma.webp" class="hero__product-img" alt="Шаурма">
 
-            <!-- Foreground floats (in front of shawarma) -->
+            <!-- Перед шавухой -->
             <img src="assets/images/fries.webp" class="hero__float hero__float--fg float-fries" alt="Картофель">
             <img src="assets/images/kebab.webp" class="hero__float hero__float--fg float-kebab" alt="Люля-Кебаб">
         </div>
 
-        <!-- CTA Text Content -->
+        <!-- Цитата -->
         <div class="hero__cta">
             <h1 class="hero__title">МММММ...</h1>
             <p class="hero__subtitle">шаурма на углях, шашлыки в ассортименте и куро гриль..<br>всё благодаря экологически чистой продукции!</p>
@@ -100,7 +100,7 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- О нас -->
     <section class="about">
         <div class="container">
             <div class="about__content">
@@ -123,7 +123,7 @@
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Галерея Section -->
     <section class="gallery" id="gallery">
         <div class="container">
             <h2 class="section-title">Галерея</h2>
@@ -166,7 +166,15 @@
                         <h3 class="contacts__label">Режим работы</h3>
                         <p class="contacts__value">ПН-СБ с 8:00 до 21:30<br>Воскресенье выходной</p>
                     </div>
-                </div>
+                    <div class="contacts__item">
+                        <h3 class="contacts__label">Где искать</h3>
+                        <p class="contacts__value">
+                        <a href="https://yandex.ru/maps/org/vkusno_sochno/95020799240/?from=mapframe&ll=38.107908%2C55.917395&pt=38.114979%2C55.915311&source=mapframe&utm_source=mapframe&z=15.44" target="_blank" rel="noopener noreferrer" class="contacts__map-link">
+                            <!-- Иконка Яндекс Карт -->
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Yandex_Maps_icon.svg/120px-Yandex_Maps_icon.svg.png" alt="Яндекс Карты" class="contacts__map-icon">
+                        </a>
+                    </p>
+                    </div>
                 <div class="contacts__map">
                     <iframe 
                         src="https://yandex.ru/map-widget/v1/?ll=38.114979%2C55.915311&z=16&pt=38.114979%2C55.915311%2Cpm2rdm" 
