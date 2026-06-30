@@ -80,7 +80,7 @@ img {
 }
 
 /* ============================================
-   Header / Navigation
+   Header / Navigation (Додо-дизайн)
    ============================================ */
 .header {
     position: fixed;
@@ -88,7 +88,7 @@ img {
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: 18px 0;
+    padding: 16px 0;
     background: rgba(10, 10, 10, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -97,7 +97,7 @@ img {
 }
 
 .header--scrolled {
-    padding: 12px 0;
+    padding: 10px 0;
     background: rgba(10, 10, 10, 0.95);
 }
 
@@ -110,6 +110,57 @@ img {
     padding: 0 20px;
     position: relative;
     z-index: 1001;
+}
+
+.header__left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__shop-info {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--color-border);
+    padding-left: 20px;
+}
+
+.shop-info__title {
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--color-text);
+}
+
+.shop-info__subtitle {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__phone {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: var(--color-text);
+    transition: color var(--transition-fast), transform var(--transition-fast);
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+}
+
+.header__phone:hover {
+    color: var(--color-accent);
+    border-color: var(--color-border-hover);
+    transform: translateY(-1px);
 }
 
 .nav__backdrop {
@@ -131,14 +182,14 @@ img {
 
 .logo__img {
     display: block;
-    width: 140px;
+    width: 120px;
     height: auto;
     max-width: 220px;
     transition: width var(--transition-base);
 }
 
 .header--scrolled .logo__img {
-    width: 120px;
+    width: 105px;
 }
 
 .nav {
@@ -198,7 +249,7 @@ img {
 }
 
 /* ============================================
-   Hero Section (BK-Style Motion Composition)
+   Hero Section
    ============================================ */
 .hero {
     position: relative;
@@ -228,7 +279,6 @@ img {
     background: radial-gradient(circle at 50% 100%, rgba(230, 57, 70, 0.08) 0%, transparent 50%);
 }
 
-/* Seamless Marquee Track */
 .hero__marquee {
     position: absolute;
     inset: 0;
@@ -290,7 +340,6 @@ img {
     100% { transform: translate3d(0, 0, 0); }
 }
 
-/* Main Product Composition Wrapper */
 .hero__product-wrapper {
     position: relative;
     display: flex;
@@ -301,7 +350,6 @@ img {
     z-index: 3;
 }
 
-/* Central floating Shawarma */
 .hero__product-img {
     width: 100%;
     height: auto;
@@ -316,7 +364,6 @@ img {
     50% { transform: translateY(-12px) rotate(1.5deg); }
 }
 
-/* Dynamic Fire & Glow effects */
 .hero__fire-glow {
     position: absolute;
     bottom: -35px;
@@ -370,7 +417,6 @@ img {
     100% { transform: translateX(-50%) translateY(-55px); opacity: 0; }
 }
 
-/* Floating dynamic products (BK commercial style) */
 .hero__float {
     position: absolute;
     width: clamp(65px, 11vw, 110px);
@@ -440,7 +486,6 @@ img {
     100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
 }
 
-/* Hero CTA */
 .hero__cta {
     position: relative;
     z-index: 10;
@@ -462,12 +507,12 @@ img {
 
 .hero__subtitle {
     font-family: var(--font-main);
-    font-size: clamp(0.95rem, 3vw, 1.4rem);
+    font-size: clamp(0.95rem, 3vw, 1.25rem);
     font-weight: 700;
     color: rgba(255, 255, 255, 0.85);
-    max-width: 540px;
-    margin: 0 auto 24px;
-    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto 28px;
+    line-height: 1.6;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
 }
 
@@ -475,7 +520,7 @@ img {
     display: inline-block;
     background: var(--color-accent);
     color: var(--color-text);
-    padding: 14px 36px;
+    padding: 16px 40px;
     border-radius: var(--radius-pill);
     font-weight: 800;
     font-size: 0.9375rem;
@@ -489,10 +534,6 @@ img {
     background: var(--color-accent-hover);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
-}
-
-.hero__btn:active {
-    transform: translateY(0);
 }
 
 /* ============================================
@@ -520,39 +561,49 @@ img {
 }
 
 /* ============================================
-   About Section
+   About Section (Додо-плитки контроля качества)
    ============================================ */
 .about {
-    padding: 80px 0;
+    padding: 100px 0;
     background: var(--color-bg);
 }
 
 .about__features {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 24px;
 }
 
 .about__feature {
-    text-align: left;
-    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
     background: var(--color-surface);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-xl);
     border: 1px solid var(--color-border);
-    transition: border-color var(--transition-base), transform var(--transition-base);
+    transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .about__feature:hover {
     border-color: var(--color-border-hover);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.about__feature-icon {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    line-height: 1;
 }
 
 .about__feature-title {
     font-family: var(--font-main);
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     font-weight: 800;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     color: var(--color-text);
+    letter-spacing: 0.5px;
 }
 
 .about__feature-text {
@@ -736,7 +787,7 @@ img {
     gap: 20px;
 }
 
-/* Compact Premium Dodo-Style Menu Card */
+/* Dodo-Style Premium Menu Card */
 .menu-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
@@ -746,6 +797,7 @@ img {
     flex-direction: column;
     height: 100%;
     transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+    cursor: pointer; /* Вся карточка кликабельна */
 }
 
 .menu-card:hover {
@@ -771,7 +823,7 @@ img {
 }
 
 .menu-card:hover .menu-card__img {
-    transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 .menu-card__content {
@@ -783,7 +835,7 @@ img {
 
 .menu-card__title {
     font-family: var(--font-main);
-    font-size: 1.18rem;
+    font-size: 1.15rem;
     font-weight: 800;
     color: var(--color-text);
     margin-bottom: 8px;
@@ -796,50 +848,56 @@ img {
     font-weight: 400;
     color: var(--color-text-muted);
     line-height: 1.55;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
     flex-grow: 1;
 }
 
-/* ============================================
-   Фикс переноса вариаций в карточках меню
-   ============================================ */
-
+/* Вариации на карточке (Додо-переключатели) */
 .card-variations {
     display: flex;
-    flex-wrap: wrap;          /* Перенос на новую строку */
-    gap: 6px;                 /* Расстояние между кнопками */
-    margin-top: 12px;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto; /* Прижимаем к низу перед футером */
+    margin-bottom: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 4px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
 }
 
 .variation-btn {
-    flex: 0 1 auto;           /* Не растягиваться, но сжиматься при необходимости */
+    flex: 1 1 auto;
     min-width: 0;
-    padding: 6px 10px;
-    font-size: 13px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
     line-height: 1.2;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    background: rgba(255, 255, 255, 0.05);
-    color: #fff;
+    border-radius: var(--radius-sm);
+    border: none;
+    background: transparent;
+    color: var(--color-text-muted);
     cursor: pointer;
-    white-space: nowrap;      /* Чтобы текст не переносился внутри кнопки */
-    transition: all 0.2s ease;
+    white-space: nowrap;
+    transition: all var(--transition-fast);
+}
+
+.variation-btn:hover {
+    color: var(--color-text);
 }
 
 .variation-btn--active {
-    background: #e63946;      /* Ваш акцентный цвет */
-    border-color: #e63946;
-    color: #fff;
+    background: var(--color-accent);
+    color: var(--color-text) !important;
+    box-shadow: var(--shadow-sm);
 }
 
-/* Если цена и бейдж тоже начинают налезать друг на друга */
+/* Футер карточки (только цена) */
 .menu-card__footer {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    margin-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 16px;
+    margin-top: auto; /* Прижимает футер к самому низу карточки независимо от высоты текста */
 }
 
 .menu-card__price {
@@ -854,15 +912,256 @@ img {
     font-family: var(--font-main);
 }
 
-.menu-card__badge {
-    background: rgba(230, 57, 70, 0.08);
+/* Додо-кнопка вместо стандартного "Купить" */
+.menu-card__action-btn {
+    background: rgba(230, 57, 70, 0.1);
     color: var(--color-accent);
-    border: 1px solid rgba(230, 57, 70, 0.15);
-    padding: 6px 14px;
+    border: 1px solid rgba(230, 57, 70, 0.25);
+    padding: 8px 18px;
     border-radius: var(--radius-pill);
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.menu-card:hover .menu-card__action-btn {
+    background: var(--color-accent);
+    color: var(--color-text);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-accent);
+}
+
+/* ============================================
+   Додо-модальное окно просмотра (Modal Detail)
+   ============================================ */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.modal--open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
+}
+
+.modal__container {
+    position: relative;
+    z-index: 2;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    max-height: 90dvh;
+    overflow-y: auto;
+    box-shadow: var(--shadow-md);
+    transform: scale(0.95);
+    transition: transform var(--transition-base);
+}
+
+.modal--open .modal__container {
+    transform: scale(1);
+}
+
+.modal__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    color: var(--color-text);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    z-index: 10;
+}
+
+.modal__close:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.modal__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px;
+}
+
+.modal__image-wrapper {
+    background: #000;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.modal__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity var(--transition-fast);
+}
+
+.modal__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modal__badge {
+    align-self: flex-start;
+    background: rgba(230, 57, 70, 0.1);
+    color: var(--color-accent);
+    border: 1px solid rgba(230, 57, 70, 0.2);
+    padding: 4px 12px;
+    border-radius: var(--radius-pill);
+    font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.modal__title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.25;
+    color: var(--color-text);
+    margin-bottom: 12px;
+}
+
+.modal__desc {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.modal__section-title {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-text-dim);
+    margin-bottom: 8px;
+}
+
+.modal__variations-wrapper {
+    margin-bottom: 24px;
+}
+
+.modal__variations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 4px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.modal-var-btn {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: 8px 16px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    border: none;
+    background: transparent;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.modal-var-btn--active {
+    background: var(--color-accent);
+    color: var(--color-text);
+    box-shadow: var(--shadow-sm);
+}
+
+.modal__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+    margin-top: auto;
+}
+
+.modal__price-block {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.modal__price-label {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--color-text-dim);
+}
+
+.modal__price {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--color-text);
+}
+
+.modal__action-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 14px;
+    text-align: center;
+}
+
+.modal__action-text {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.modal__phone-btn {
+    display: inline-block;
+    background: var(--color-accent);
+    color: var(--color-text);
+    font-size: 0.875rem;
+    font-weight: 900;
+    padding: 10px 24px;
+    border-radius: var(--radius-pill);
+    box-shadow: var(--shadow-accent);
+    transition: all var(--transition-fast);
+}
+
+.modal__phone-btn:hover {
+    background: var(--color-accent-hover);
+    transform: translateY(-1px);
 }
 
 /* ============================================
@@ -1023,8 +1322,7 @@ img {
     }
 
     .about__feature {
-        text-align: center;
-        padding: 36px 24px;
+        padding: 40px 32px;
     }
 
     .contacts__grid {
@@ -1040,6 +1338,12 @@ img {
         flex-direction: row;
         justify-content: space-between;
         text-align: left;
+    }
+
+    .modal__grid {
+        grid-template-columns: 1.1fr 1fr;
+        padding: 40px;
+        gap: 32px;
     }
 }
 
@@ -1058,12 +1362,11 @@ img {
    ============================================ */
 @media (min-width: 1200px) {
     .logo__img {
-        height: 52px;
-        max-width: 260px;
+        width: 135px;
     }
 
     .header--scrolled .logo__img {
-        height: 44px;
+        width: 115px;
     }
 
     .menu-grid {
@@ -1129,11 +1432,11 @@ img {
     }
 
     .logo__img {
-        height: 44px !important;
+        width: 110px !important;
     }
 
     .menu-categories {
-        top: 81px;
+        top: 77px;
         padding: 10px 0;
     }
 
@@ -1143,6 +1446,18 @@ img {
     }
 
     .gallery__btn {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .header__shop-info {
+        display: none;
+    }
+}
+
+@media (max-width: 579px) {
+    .header__phone {
         display: none;
     }
 }

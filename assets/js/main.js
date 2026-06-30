@@ -428,7 +428,7 @@
             id: 'dr_coffee',
             category: 'drinks',
             title: 'Кофе в ассортименте',
-            description: 'Ароматнейшее зерновое кофе: эспрессо, американо, капучино, латте и эспрессо макиато. Сварено из отборных цельных зёрен.',
+            description: 'Ароматнейшее зерновое кофе: эспрессо, американо, капучино, латте и макиато. Сварено из отборных цельных зёрен.',
             image: 'assets/images/coffee.webp',
             variations: [
                 { name: 'Эспрессо', price: 80 },
@@ -441,12 +441,90 @@
         {
             id: 'dr_tea',
             category: 'drinks',
-            title: 'Чай от Гринфилда',
-            description: 'Ароматный горячий чай от Greenfield + добавление сочного лимона.',
+            title: 'Чай Greenfield',
+            description: 'Ароматный горячий чай от Greenfield с добавлением сочного лимона.',
             image: 'assets/images/tea.webp',
             price: 40
         }
     ];
+
+    // Модальное окно (Додо-стиль)
+    const modal = document.getElementById('dish-modal');
+    const modalBackdrop = modal ? modal.querySelector('.modal__backdrop') : null;
+    const modalClose = modal ? modal.querySelector('.modal__close') : null;
+
+    function openModal(item, startVarIndex = 0) {
+        if (!modal) return;
+
+        const modalImg = document.getElementById('modal-img');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDesc = document.getElementById('modal-desc');
+        const modalPriceVal = document.getElementById('modal-price-val');
+        const modalBadge = document.getElementById('modal-badge');
+        const varContainer = document.getElementById('modal-variations-container');
+        const varList = document.getElementById('modal-variations-list');
+
+        // Базовые данные
+        modalTitle.textContent = item.title;
+        modalDesc.textContent = item.description;
+        modalBadge.textContent = (item.category === 'shawarma' || item.category === 'grill') ? 'На углях 🔥' : 'Вкусно ✨';
+
+        let activeIndex = startVarIndex;
+
+        function updateModalDetails() {
+            let currentPrice = item.price ? item.price : item.variations[activeIndex].price;
+            let currentImg = item.price ? item.image : (item.variations[activeIndex].image || item.image);
+
+            modalPriceVal.textContent = currentPrice;
+            
+            if (modalImg) {
+                modalImg.style.opacity = '0';
+                setTimeout(() => {
+                    modalImg.src = currentImg;
+                    modalImg.alt = item.title;
+                    modalImg.style.opacity = '1';
+                }, 100);
+            }
+        }
+
+        // Рендер вариаций внутри модального окна
+        if (item.variations && item.variations.length > 0) {
+            varContainer.style.display = 'block';
+            varList.innerHTML = '';
+            item.variations.forEach((v, index) => {
+                const btn = document.createElement('button');
+                btn.className = 'modal-var-btn' + (index === activeIndex ? ' modal-var-btn--active' : '');
+                btn.textContent = v.name;
+                btn.addEventListener('click', () => {
+                    varList.querySelectorAll('.modal-var-btn').forEach(b => b.classList.remove('modal-var-btn--active'));
+                    btn.classList.add('modal-var-btn--active');
+                    activeIndex = index;
+                    updateModalDetails();
+                });
+                varList.appendChild(btn);
+            });
+        } else {
+            varContainer.style.display = 'none';
+        }
+
+        updateModalDetails();
+
+        modal.classList.add('modal--open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        if (!modal) return;
+        modal.classList.remove('modal--open');
+        document.body.style.overflow = '';
+    }
+
+    if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+    }
+    if (modalBackdrop) {
+        modalBackdrop.addEventListener('click', closeModal);
+    }
 
     function renderMenuGrid(categoryFilter = 'all') {
         const grid = document.getElementById('menu-grid');
@@ -485,43 +563,47 @@
                     ${variationsHtml}
                     <div class="menu-card__footer">
                         <div class="menu-card__price"><span class="price-val">${currentPrice}</span> ₽</div>
-                        <div class="menu-card__badge">${item.category === 'shawarma' || item.category === 'grill' ? 'На углях 🔥' : 'Вкусно ✨'}</div>
                     </div>
                 </div>
             `;
 
-            // Обработка клика по кнопкам-вариациям (изменение цены и динамическая смена изображений)
+            // Обработка переключателей на самой карточке
             const varBtns = card.querySelectorAll('.variation-btn');
             const cardImg = card.querySelector('.menu-card__img');
+            
             varBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Не открывать модалку при переключении кнопок
                     varBtns.forEach(b => b.classList.remove('variation-btn--active'));
                     btn.classList.add('variation-btn--active');
-                    const index = parseInt(btn.getAttribute('data-index'));
                     
-                    // Обновление цены
+                    const index = parseInt(btn.getAttribute('data-index'));
+                    selectedVarIndex = index;
+                    
                     const newPrice = item.variations[index].price;
                     card.querySelector('.price-val').textContent = newPrice;
 
-                    // Умная смена картинки (если у вариации прописано собственное изображение)
                     const specImage = item.variations[index].image;
                     if (specImage && cardImg) {
                         cardImg.style.opacity = '0';
                         setTimeout(() => {
                             cardImg.src = specImage;
                             cardImg.style.opacity = '1';
-                        }, 150);
+                        }, 100);
                     }
                 });
+            });
+
+            // Открытие детального Додо-окна при клике на саму карточку
+            card.addEventListener('click', () => {
+                openModal(item, selectedVarIndex);
             });
 
             grid.appendChild(card);
         });
     }
 
-    // ============================================
-    // Initialize Category Filters
-    // ============================================
+    // Категории
     const catButtons = document.querySelectorAll('.category-btn');
     if (catButtons.length > 0) {
         catButtons.forEach(btn => {
@@ -534,7 +616,7 @@
         });
     }
 
-    // Initialize Menu Grid on DOM Load
+    // Инициализация при загрузке
     document.addEventListener('DOMContentLoaded', () => {
         if (document.getElementById('menu-grid')) {
             renderMenuGrid('all');
