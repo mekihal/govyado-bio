@@ -197,7 +197,7 @@
             id: 'sn_shrimps_klyar',
             category: 'snacks',
             title: 'Креветки в кляре',
-            description: 'Обжаренные королевские креветки в нежном кляре.',
+            description: 'Обжаренные королевские креветки в нежным кляре.',
             image: 'assets/images/shrimpclar.webp',
             price: 250
         },
@@ -268,26 +268,25 @@
     // Global Mobile Navigation
     // ============================================
     const navToggle = document.querySelector('.nav__toggle');
-    const header = document.querySelector('.header');
     const navLinks = document.querySelectorAll('.nav__link');
     const backdrop = document.querySelector('.nav__backdrop');
 
-    if (navToggle && header) {
+    if (navToggle) {
         navToggle.addEventListener('click', function() {
-            header.classList.toggle('nav--open');
-            document.body.style.overflow = header.classList.contains('nav--open') ? 'hidden' : '';
+            document.body.classList.toggle('nav--open');
+            document.body.style.overflow = document.body.classList.contains('nav--open') ? 'hidden' : '';
         });
 
         navLinks.forEach(function(link) {
             link.addEventListener('click', function() {
-                header.classList.remove('nav--open');
+                document.body.classList.remove('nav--open');
                 document.body.style.overflow = '';
             });
         });
 
         if (backdrop) {
             backdrop.addEventListener('click', function() {
-                header.classList.remove('nav--open');
+                document.body.classList.remove('nav--open');
                 document.body.style.overflow = '';
             });
         }
