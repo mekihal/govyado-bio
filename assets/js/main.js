@@ -130,8 +130,8 @@
             description: 'Горячая сосиска с огурчиком, кетчупом, горчицей и жареным луком фри.',
             image: 'assets/images/hotdog.webp',
             variations: [
-                { name: 'Классический', price: 150 },
-                { name: 'Двойной', price: 220 }
+                { name: 'Классический', price: 150, image: 'assets/images/hotdog.webp' },
+                { name: 'Двойной', price: 220, image: 'assets/images/dbhotdog.webp' }
             ]
         },
         {
@@ -353,7 +353,7 @@
     });
 
     const animElements = document.querySelectorAll(
-        '.about__feature, .contacts__item, .contacts__map, .gallery__slider'
+        '.about__feature, .contacts__item, .contacts__map, .gallery__slider, .reviews__widget-wrapper'
     );
 
     animElements.forEach(function(el) {

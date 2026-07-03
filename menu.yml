@@ -283,8 +283,8 @@
         <price>220</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
-        <picture>https://govyado.ru/assets/images/hotdog.webp</picture>
-        <description>Горячая сосиска с огурчиком, кетчупом, горчицей и жареным луком фри.</description>
+        <picture>https://govyado.ru/assets/images/dbhotdog.webp</picture>
+        <description>Две горячих сосисек с огурчиком, кетчупом, горчицей и жареным луком фри в лаваше.</description>
         <param name="Размер">Двойной</param>
       </offer>
 
