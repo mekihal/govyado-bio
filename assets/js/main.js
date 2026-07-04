@@ -28,7 +28,7 @@
             id: 'sh_classic',
             category: 'shawarma',
             title: 'Шаурма Классическая',
-            description: 'Сочное мясо на углях, маринованные огурцы, помидоры, капуста и фирменный соус в тонком армянском лаваше.',
+            description: 'Сочное мясо на углях, маринованные огурцы, помидоры, пекинская капуста и фирменный соус в тонком армянском лаваше.',
             image: 'assets/images/shaur.webp',
             variations: [
                 { name: 'Курица', price: 270, image: 'assets/images/shaur.webp' },
