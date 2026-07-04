@@ -1,4 +1,4 @@
-Sitemap: https://govyado.ru/sitemap.xml
 User-agent: *
-Allow: https://govyado.ru/index.html
-Allow: https://govyado.ru/menu.html
+Allow: /
+
+Sitemap: https://govyado.ru/sitemap.xml
