@@ -568,6 +568,17 @@ img {
     background: var(--color-bg);
 }
 
+.about__subtitle {
+    font-family: var(--font-main);
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-align: center;
+    max-width: 720px;
+    margin: -15px auto 48px;
+    line-height: 1.6;
+}
+
 .about__features {
     display: grid;
     grid-template-columns: 1fr;
@@ -613,19 +624,8 @@ img {
     line-height: 1.6;
 }
 
-.about__subtitle {
-    font-family: var(--font-main);
-    font-size: clamp(0.95rem, 3vw, 1.1rem);
-    font-weight: 500;
-    color: var(--color-text-muted);
-    text-align: center;
-    max-width: 720px;
-    margin: -15px auto 48px;
-    line-height: 1.6;
-}
-
 /* ============================================
-   Gallery Section
+   Gallery Section (Адаптировано и исправлено)
    ============================================ */
 .gallery {
     padding: 80px 0;
@@ -645,28 +645,33 @@ img {
     border-radius: var(--radius-lg);
     border: 1px solid var(--color-border);
     background: var(--color-bg);
+    aspect-ratio: 16 / 9; 
+    position: relative;
 }
 
 .gallery__track {
     display: flex;
+    height: 100%;
     transition: transform var(--transition-slow);
     will-change: transform;
 }
 
 .gallery__slide {
     flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background: var(--color-bg);
-    aspect-ratio: 16 / 9;
     overflow: hidden;
 }
 
 .gallery__slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; 
+    object-position: center;
     display: block;
 }
 
@@ -874,7 +879,7 @@ img {
     flex-direction: column;
     height: 100%;
     transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
-    cursor: pointer; /* Вся карточка кликабельна */
+    cursor: pointer; 
 }
 
 .menu-card:hover {
@@ -934,7 +939,7 @@ img {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    margin-top: auto; /* Прижимаем к низу перед футером */
+    margin-top: auto; 
     margin-bottom: 16px;
     background: rgba(255, 255, 255, 0.03);
     padding: 4px;
@@ -974,7 +979,7 @@ img {
     align-items: center;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 16px;
-    margin-top: auto; /* Прижимает футер к самому низу карточки независимо от высоты текста */
+    margin-top: auto; 
 }
 
 .menu-card__price {
@@ -1491,14 +1496,13 @@ img {
         -webkit-overflow-scrolling: touch;
     }
 
-    /* Стало в CSS: */
     .nav--open .nav { 
-        right: 0; /* Выдвигаем меню */
-}
+        right: 0; 
+    }
 
     .nav--open .nav__backdrop { 
         opacity: 1; 
-        visibility: visible; /* Показываем затемнение */
+        visibility: visible; 
     }
 
     .nav__link {

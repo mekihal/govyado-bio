@@ -54,9 +54,9 @@
         <param name="Начинка">Телятина</param>
       </offer>
 
-      <!-- Шаурма XL -->
+      <!-- Шаурма Двойная -->
       <offer id="sh_xl_chicken" group_id="sh_xl" available="true">
-        <name>Шаурма XL (Курица)</name>
+        <name>Шаурма Двойная (Курица)</name>
         <url>https://govyado.ru/menu</url>
         <price>450</price>
         <currencyId>RUB</currencyId>
@@ -66,7 +66,7 @@
         <param name="Начинка">Курица</param>
       </offer>
       <offer id="sh_xl_pork" group_id="sh_xl" available="true">
-        <name>Шаурма XL (Свинина)</name>
+        <name>Шаурма Двойная (Свинина)</name>
         <url>https://govyado.ru/menu</url>
         <price>500</price>
         <currencyId>RUB</currencyId>
@@ -76,7 +76,7 @@
         <param name="Начинка">Свинина</param>
       </offer>
       <offer id="sh_xl_beef" group_id="sh_xl" available="true">
-        <name>Шаурма XL (Телятина)</name>
+        <name>Шаурма Двойная (Телятина)</name>
         <url>https://govyado.ru/menu</url>
         <price>500</price>
         <currencyId>RUB</currencyId>
