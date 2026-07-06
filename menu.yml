@@ -188,7 +188,7 @@
       
       <!-- Шашлык по-турецки -->
       <offer id="gr_turkish_chicken" group_id="gr_turkish" available="true">
-        <name>Шашлык по-турецки (Курица)</name>
+        <name>Шашлык по-турецки (100 гр./Курица)</name>
         <url>https://govyado.ru/menu</url>
         <price>250</price>
         <currencyId>RUB</currencyId>
@@ -198,7 +198,7 @@
         <param name="Мясо">Курица</param>
       </offer>
       <offer id="gr_turkish_lyulya" group_id="gr_turkish" available="true">
-        <name>Шашлык по-турецки (Люля)</name>
+        <name>Шашлык по-турецки (100 гр./Люля)</name>
         <url>https://govyado.ru/menu</url>
         <price>300</price>
         <currencyId>RUB</currencyId>
@@ -208,7 +208,7 @@
         <param name="Мясо">Люля</param>
       </offer>
       <offer id="gr_turkish_beef" group_id="gr_turkish" available="true">
-        <name>Шашлык по-турецки (Говядина)</name>
+        <name>Шашлык по-турецки (100 гр./Говядина)</name>
         <url>https://govyado.ru/menu</url>
         <price>300</price>
         <currencyId>RUB</currencyId>
@@ -220,7 +220,7 @@
 
       <!-- Шашлык на углях -->
       <offer id="gr_classic_chicken" group_id="gr_classic" available="true">
-        <name>Шашлык на углях (Курица)</name>
+        <name>Шашлык на углях (100 гр./Курица)</name>
         <url>https://govyado.ru/menu</url>
         <price>220</price>
         <currencyId>RUB</currencyId>
@@ -230,7 +230,7 @@
         <param name="Мясо">Курица</param>
       </offer>
       <offer id="gr_classic_pork" group_id="gr_classic" available="true">
-        <name>Шашлык на углях (Свинина)</name>
+        <name>Шашлык на углях (100 гр./Свинина)</name>
         <url>https://govyado.ru/menu</url>
         <price>300</price>
         <currencyId>RUB</currencyId>
@@ -240,7 +240,7 @@
         <param name="Мясо">Свинина</param>
       </offer>
       <offer id="gr_classic_beef" group_id="gr_classic" available="true">
-        <name>Шашлык на углях (Телятина)</name>
+        <name>Шашлык на углях (100 гр./Телятина)</name>
         <url>https://govyado.ru/menu</url>
         <price>350</price>
         <currencyId>RUB</currencyId>
@@ -311,7 +311,7 @@
 
       <!-- Сырные палочки -->
       <offer id="sn_cheese" available="true">
-        <name>Сырные палочки</name>
+        <name>Сырные палочки (5 шт.)</name>
         <url>https://govyado.ru/menu</url>
         <price>170</price>
         <currencyId>RUB</currencyId>
@@ -322,7 +322,7 @@
 
       <!-- Куриные стрипсы -->
       <offer id="sn_strips" available="true">
-        <name>Куриные стрипсы</name>
+        <name>Куриные стрипсы (100 гр.)</name>
         <url>https://govyado.ru/menu</url>
         <price>150</price>
         <currencyId>RUB</currencyId>
@@ -333,7 +333,7 @@
 
       <!-- Наггетсы -->
       <offer id="sn_nuggets" available="true">
-        <name>Наггетсы</name>
+        <name>Наггетсы (5 шт.)</name>
         <url>https://govyado.ru/menu</url>
         <price>150</price>
         <currencyId>RUB</currencyId>
@@ -377,7 +377,7 @@
 
       <!-- Креветки в кляре -->
       <offer id="sn_shrimps_klyar" available="true">
-        <name>Креветки в кляре</name>
+        <name>Креветки в кляре (5 шт.)</name>
         <url>https://govyado.ru/menu</url>
         <price>260</price>
         <currencyId>RUB</currencyId>
