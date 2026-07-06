@@ -28,7 +28,7 @@
             id: 'sh_classic',
             category: 'shawarma',
             title: 'Шаурма Классическая',
-            description: 'Сочное мясо на углях, маринованные огурцы, помидоры, капуста и фирменный соус в тонком армянском лаваше.',
+            description: 'Сочное мясо на углях, маринованные огурцы, помидоры, пекинская капуста и фирменный соус в тонком армянском лаваше.',
             image: 'assets/images/shaur.webp',
             variations: [
                 { name: 'Курица', price: 270, image: 'assets/images/shaur.webp' },
@@ -501,6 +501,51 @@
         return absoluteUrl;
     }
 
+    // Функция деликатной очистки названий для удаления ненужных родительских приписок
+    function cleanTitleWithSpecs(titleFull) {
+        let clean = titleFull.trim();
+
+        // 1. Обрабатываем составные скобки, например: "(100 гр./Курица)" -> "(100 гр.)"
+        clean = clean.replace(/\(([^)]+)\)/g, function(match, content) {
+            if (content.includes('/')) {
+                const parts = content.split('/');
+                const weightOrCount = parts.find(p => p.includes('гр.') || p.includes('шт.'));
+                if (weightOrCount) {
+                    return `(${weightOrCount.trim()})`;
+                }
+            }
+            return match;
+        });
+
+        // 2. Проверяем содержимое скобок. Если там только начинки/вид подачи/напиток — убираем скобки полностью
+        const wordsToRemove = [
+            'курица', 'свинина', 'телятина', 'говядина', 'люля',
+            'в лаваше', 'с овощами', 'классический', 'двойной',
+            'фри', 'по-деревенски', 'стандарт',
+            'добрый', 'rich', 'черноголовка', 'pulpy',
+            'эспрессо', 'американо', 'капучино', 'латте', 'макиато'
+        ];
+
+        clean = clean.replace(/\s*\(([^)]+)\)/g, function(match, content) {
+            const lowerContent = content.toLowerCase().trim();
+            
+            // Если в скобках есть вес или количество — это оставляем без изменений
+            if (lowerContent.includes('гр.') || lowerContent.includes('шт.')) {
+                return match; 
+            }
+
+            // Если совпало со стоп-словами — удаляем круглые скобки
+            const shouldRemove = wordsToRemove.some(word => lowerContent.includes(word));
+            if (shouldRemove) {
+                return '';
+            }
+
+            return match;
+        });
+
+        return clean.replace(/\s+/g, ' ').trim();
+    }
+
     function parseYmlToMenuData(xmlText) {
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
@@ -524,8 +569,8 @@
             const paramElement = offer.getElementsByTagName('param')[0];
             const variationName = paramElement ? paramElement.textContent : '';
 
-            // Оставляем имя со всеми скобками и приписками (например, "Хот-дог (Классический)" или "Наггетсы (5 шт.)")
-            const cleanTitle = titleFull.trim();
+            // Очищаем заголовок по нашему новому алгоритму
+            const cleanTitle = cleanTitleWithSpecs(titleFull);
 
             if (groupId) {
                 if (!groupedMap[groupId]) {
