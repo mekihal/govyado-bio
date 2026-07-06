@@ -3,7 +3,6 @@
   <shop>
     <name>Говядо</name>
     <company>Говядо</company>
-    <!-- ЗАМЕНИТЕ НА ВАШ РЕАЛЬНЫЙ АДРЕС САЙТА НА GITHUB PAGES ИЛИ СВОЙ ДОМЕН -->
     <url>https://govyado.ru</url> 
     <currencies>
       <currency id="RUB" rate="1"/>
@@ -201,7 +200,7 @@
       <offer id="gr_turkish_lyulya" group_id="gr_turkish" available="true">
         <name>Шашлык по-турецки (Люля)</name>
         <url>https://govyado.ru/menu</url>
-        <price>280</price>
+        <price>300</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
         <picture>https://govyado.ru/assets/images/shashlukturecki.webp</picture>
@@ -255,7 +254,7 @@
       <offer id="gr_chicken" available="true">
         <name>Куры гриль</name>
         <url>https://govyado.ru/menu</url>
-        <price>400</price>
+        <price>700</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
         <picture>https://govyado.ru/assets/images/chickengrill.webp</picture>
@@ -270,7 +269,7 @@
       <offer id="sn_hotdog_classic" group_id="sn_hotdog" available="true">
         <name>Хот-дог (Классический)</name>
         <url>https://govyado.ru/menu</url>
-        <price>150</price>
+        <price>190</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
         <picture>https://govyado.ru/assets/images/hotdog.webp</picture>
@@ -280,7 +279,7 @@
       <offer id="sn_hotdog_double" group_id="sn_hotdog" available="true">
         <name>Хот-дог (Двойной)</name>
         <url>https://govyado.ru/menu</url>
-        <price>220</price>
+        <price>260</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
         <picture>https://govyado.ru/assets/images/dbhotdog.webp</picture>
@@ -380,7 +379,7 @@
       <offer id="sn_shrimps_klyar" available="true">
         <name>Креветки в кляре</name>
         <url>https://govyado.ru/menu</url>
-        <price>250</price>
+        <price>260</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
         <picture>https://govyado.ru/assets/images/shrimpclar.webp</picture>
@@ -446,9 +445,9 @@
 
       <!-- Кофе -->
       <offer id="dr_coffee_espresso" group_id="dr_coffee" available="true">
-        <name>Кофе в ассортименте (Эспрессо)</name>
+        <name>Кофе в ассортименте (Двойной эспрессо)</name>
         <url>https://govyado.ru/menu</url>
-        <price>80</price>
+        <price>110</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
         <picture>https://govyado.ru/assets/images/coffee.webp</picture>
@@ -458,7 +457,7 @@
       <offer id="dr_coffee_americano" group_id="dr_coffee" available="true">
         <name>Кофе в ассортименте (Американо)</name>
         <url>https://govyado.ru/menu</url>
-        <price>120</price>
+        <price>100</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
         <picture>https://govyado.ru/assets/images/coffee.webp</picture>
@@ -468,7 +467,7 @@
       <offer id="dr_coffee_capuccino" group_id="dr_coffee" available="true">
         <name>Кофе в ассортименте (Капучино)</name>
         <url>https://govyado.ru/menu</url>
-        <price>150</price>
+        <price>200</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
         <picture>https://govyado.ru/assets/images/coffee.webp</picture>
@@ -478,7 +477,7 @@
       <offer id="dr_coffee_latte" group_id="dr_coffee" available="true">
         <name>Кофе в ассортименте (Латте)</name>
         <url>https://govyado.ru/menu</url>
-        <price>180</price>
+        <price>200</price>
         <currencyId>RUB</currencyId>
         <categoryId>4</categoryId>
         <picture>https://govyado.ru/assets/images/coffee.webp</picture>
