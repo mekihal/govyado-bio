@@ -247,7 +247,7 @@
         {
             id: 'cm_fss',
             category: 'combos',
-            title: 'Картофель фри + мини-сосиски и соус томатный',
+            title: 'Картофель фри + mini-сосиски и соус томатный',
             description: 'Очень вкусное комбо на обед!',
             image: 'assets/images/combo1.webp',
             price: 300
@@ -555,7 +555,14 @@
             }
         }
 
-        return [...Object.values(groupedMap), ...standaloneItems];
+        const combinedMenu = [...Object.values(groupedMap), ...standaloneItems];
+
+        // Желаемый порядок категорий на сайте (напитки в самом конце)
+        const categoryOrder = ["shawarma", "grill", "snacks", "combos", "drinks"];
+
+        return combinedMenu.sort((a, b) => {
+            return categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category);
+        });
     }
 
 
