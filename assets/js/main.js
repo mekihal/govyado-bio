@@ -28,7 +28,7 @@
             id: 'sh_classic',
             category: 'shawarma',
             title: 'Шаурма Классическая',
-            description: 'Сочное мясо на углях, маринованные огурцы, помидоры, пекинская капуста и фирменный соус в тонком армянском лаваше.',
+            description: 'Сочное мясо на углях, маринованные огурцы, помидоры, капуста и фирменный соус в тонком армянском лаваше.',
             image: 'assets/images/shaur.webp',
             variations: [
                 { name: 'Курица', price: 270, image: 'assets/images/shaur.webp' },
@@ -39,7 +39,7 @@
         {
             id: 'sh_xl',
             category: 'shawarma',
-            title: 'Шаурма XL',
+            title: 'Шаурма Двойная',
             description: 'Для настоящих богатырей: двойная порция сочного мяса на углях с овощами и соусом.',
             image: 'assets/images/xlshaurma.webp',
             variations: [
@@ -94,19 +94,19 @@
         {
             id: 'gr_turkish',
             category: 'grill',
-            title: 'Шашлык по-турецки',
+            title: 'Шашлык по-турецки (100 гр.)',
             description: 'Подается в лепешке — сочный шашлык с фирменным соусом и репчатым луком с зеленью.',
             image: 'assets/images/shashlukturecki.webp',
             variations: [
                 { name: 'Курица', price: 250 },
-                { name: 'Люля', price: 280 },
+                { name: 'Люля', price: 300 },
                 { name: 'Говядина', price: 300 }
             ]
         },
         {
             id: 'gr_classic',
             category: 'grill',
-            title: 'Шашлык на углях',
+            title: 'Шашлык на углях (100 гр.)',
             description: 'Классический, сочный шашлык. Подается с луком и в лаваше в комплекте.',
             image: 'assets/images/shashluk.webp',
             variations: [
@@ -121,7 +121,7 @@
             title: 'Куры гриль',
             description: 'Цельная курица гриль с аппетитной хрустящей корочкой.',
             image: 'assets/images/chickengrill.webp',
-            price: 400
+            price: 700
         },
         {
             id: 'sn_hotdog',
@@ -130,8 +130,8 @@
             description: 'Горячая сосиска с огурчиком, кетчупом, горчицей и жареным луком фри.',
             image: 'assets/images/hotdog.webp',
             variations: [
-                { name: 'Классический', price: 150, image: 'assets/images/hotdog.webp' },
-                { name: 'Двойной', price: 220, image: 'assets/images/dbhotdog.webp' }
+                { name: 'Классический', price: 190, image: 'assets/images/hotdog.webp' },
+                { name: 'Двойной', price: 260, image: 'assets/images/dbhotdog.webp' }
             ]
         },
         {
@@ -148,7 +148,7 @@
         {
             id: 'sn_cheese',
             category: 'snacks',
-            title: 'Сырные палочки',
+            title: 'Сырные палочки (5 шт.)',
             description: 'Тягучий сыр в хрустящей золотистой панировке.',
             image: 'assets/images/cheesesticks.webp',
             price: 170
@@ -156,7 +156,7 @@
         {
             id: 'sn_strips',
             category: 'snacks',
-            title: 'Куриные стрипсы',
+            title: 'Куриные стрипсы (100 гр.)',
             description: 'Нежные кусочки куриного филе в хрустящей панировке.',
             image: 'assets/images/chickenstripes.webp',
             price: 150
@@ -164,7 +164,7 @@
         {
             id: 'sn_nuggets',
             category: 'snacks',
-            title: 'Наггетсы',
+            title: 'Наггетсы (5 шт.)',
             description: 'Классические куриные наггетсы — мягкие внутри, хрустящие снаружи.',
             image: 'assets/images/nuggets.webp',
             price: 150
@@ -196,10 +196,10 @@
         {
             id: 'sn_shrimps_klyar',
             category: 'snacks',
-            title: 'Креветки в кляре',
-            description: 'Обжаренные королевские креветки в нежным кляре.',
+            title: 'Креветки в кляре (5 шт.)',
+            description: 'Обжаренные королевские креветки в нежном кляре.',
             image: 'assets/images/shrimpclar.webp',
-            price: 250
+            price: 260
         },
         {
             id: 'sn_minicheb',
@@ -229,10 +229,10 @@
             description: 'Ароматнейшее зерновое кофе: эспрессо, американо, капучино, латте и макиато. Сварено из отборных цельных зёрен.',
             image: 'assets/images/coffee.webp',
             variations: [
-                { name: 'Эспрессо', price: 80 },
-                { name: 'Американо', price: 120 },
-                { name: 'Капучино', price: 150 },
-                { name: 'Латте', price: 180 },
+                { name: 'Двойной эспрессо', price: 110 },
+                { name: 'Американо', price: 100 },
+                { name: 'Капучино', price: 200 },
+                { name: 'Латте', price: 200 },
                 { name: 'Макиато', price: 200 }
             ]
         },
@@ -247,7 +247,7 @@
         {
             id: 'cm_fss',
             category: 'combos',
-            title: 'Картофель фри + mini-сосиски и соус томатный',
+            title: 'Картофель фри + мини-сосиски и соус томатный',
             description: 'Очень вкусное комбо на обед!',
             image: 'assets/images/combo1.webp',
             price: 300
@@ -524,8 +524,8 @@
             const paramElement = offer.getElementsByTagName('param')[0];
             const variationName = paramElement ? paramElement.textContent : '';
 
-            // Убираем вариации из скобок в имени (например, "Хот-дог (Классический)" -> "Хот-дог")
-            const cleanTitle = titleFull.replace(/\s*\(.*\)$/, '').trim();
+            // Оставляем имя со всеми скобками и приписками (например, "Хот-дог (Классический)" или "Наггетсы (5 шт.)")
+            const cleanTitle = titleFull.trim();
 
             if (groupId) {
                 if (!groupedMap[groupId]) {

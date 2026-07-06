@@ -3,6 +3,7 @@
   <shop>
     <name>Говядо</name>
     <company>Говядо</company>
+    <!-- ЗАМЕНИТЕ НА ВАШ РЕАЛЬНЫЙ АДРЕС САЙТА НА GITHUB PAGES ИЛИ СВОЙ ДОМЕН -->
     <url>https://govyado.ru</url> 
     <currencies>
       <currency id="RUB" rate="1"/>
