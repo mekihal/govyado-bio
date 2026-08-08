@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="5.0" encoding="utf-8"?>
 <yml_catalog date="2026-07-02 15:46">
   <shop>
     <name>Говядо</name>
     <company>Говядо</company>
-    <!-- ЗАМЕНИТЕ НА ВАШ РЕАЛЬНЫЙ АДРЕС САЙТА НА GITHUB PAGES ИЛИ СВОЙ ДОМЕН -->
     <url>https://govyado.ru</url> 
     <currencies>
       <currency id="RUB" rate="1"/>
@@ -308,6 +307,17 @@
         <picture>https://govyado.ru/assets/images/ancientpotato.webp</picture>
         <description>Хрустящий золотистый картофель со специями.</description>
         <param name="Тип">По-деревенски</param>
+      </offer>
+
+      <!-- Пицца карбонара -->
+      <offer id="sn_pizza_carbon" group_id="sn_pizza" available="true">
+        <name>Пицца карбонара (12 шт.)</name>
+        <url>https://govyado.ru/menu</url>
+        <price>100</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <picture>https://govyado.ru/assets/images/potatofries.webp</picture>
+        <description>Хрустящее тесто снаружи, внутри начинка с сыром и беконом.</description>
       </offer>
 
       <!-- Сырные палочки -->
