@@ -9,7 +9,7 @@
     // КОНФИГУРАЦИЯ И ПУТЬ К YML-ФАЙЛУ
     // ============================================
     // На GitHub Pages это будет просто './menu.yml' или 'menu.yml'
-    const YML_FILE_URL = './menu.yml?v=20261110.2';
+    const YML_FILE_URL = './menu.yml?v=20261110.3';
 
     // Соответствие ID категорий из YML текстовым категориям на сайте
     const categoriesMap = {
@@ -264,7 +264,7 @@
         },
         {
             id: 'br_gamburger',
-            category: 'snacks',
+            category: 'burgers',
             title: 'Гамбургер',
             description: 'Классический гамбургер с сочной котлетой.',
             image: 'assets/images/burger.webp',
@@ -272,7 +272,7 @@
         },
         {
             id: 'br_cheeseburger',
-            category: 'snacks',
+            category: 'burgers',
             title: 'Чизбургер',
             description: 'Гамбургер с нежным сыром и сочной котлетой.',
             image: 'assets/images/cheeseburger.webp',
@@ -337,7 +337,7 @@
     // ============================================
     // Smooth Anchor Scroll Navigation
     // ============================================
-    document.querySelectorAll('a[href^=\"#\"]').forEach(function(anchor) {
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             if (href === '#') return;
@@ -356,29 +356,35 @@
     // ============================================
     // Smooth Intersection Observer Animations
     // ============================================
-    const fadeObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                fadeObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        root: null,
-        rootMargin: '0px 0px -40px 0px',
-        threshold: 0.05
-    });
-
     const animElements = document.querySelectorAll(
         '.about__feature, .contacts__item, .contacts__map, .gallery__slider, .reviews__widget-wrapper'
     );
 
-    animElements.forEach(function(el) {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
-        fadeObserver.observe(el);
-    });
+    if ('IntersectionObserver' in window) {
+        const fadeObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            root: null,
+            rootMargin: '0px 0px -40px 0px',
+            threshold: 0.05
+        });
+
+        animElements.forEach(function(el) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+            fadeObserver.observe(el);
+        });
+    } else {
+        animElements.forEach(function(el) {
+            el.classList.add('is-visible');
+        });
+    }
 
     const style = document.createElement('style');
     style.textContent = '.is-visible { opacity: 1 !important; transform: translateY(0) !important; }';
@@ -492,7 +498,7 @@
             const top = section.offsetTop - 120;
             const height = section.offsetHeight;
             const id = section.getAttribute('id');
-            const link = document.querySelector('.nav__link[href=\"#' + id + '\"]');
+            const link = document.querySelector('.nav__link[href="#' + id + '"]');
             if (link && scrollY >= top && scrollY < top + height) {
                 document.querySelectorAll('.nav__link').forEach(function(l) { 
                     l.classList.remove('nav__link--active'); 
@@ -523,8 +529,8 @@
     function cleanTitleWithSpecs(titleFull) {
         let clean = titleFull.trim();
 
-        // 1. Обрабатываем составные скобки, например: \"(100 гр./Курица)\" -> \"(100 гр.)\"
-        clean = clean.replace(/\\(([^)]+)\\)/g, function(match, content) {
+        // 1. Обрабатываем составные скобки, например: "(100 гр./Курица)" -> "(100 гр.)"
+        clean = clean.replace(/\(([^)]+)\)/g, function(match, content) {
             if (content.includes('/')) {
                 const parts = content.split('/');
                 const weightOrCount = parts.find(p => p.includes('гр.') || p.includes('шт.'));
@@ -544,7 +550,7 @@
             'эспрессо', 'американо', 'капучино', 'латте', 'макиато'
         ];
 
-        clean = clean.replace(/\\s*\\(([^)]+)\\)/g, function(match, content) {
+        clean = clean.replace(/\s*\(([^)]+)\)/g, function(match, content) {
             const lowerContent = content.toLowerCase().trim();
             
             // Если в скобках есть вес или количество — это оставляем без изменений
@@ -561,7 +567,7 @@
             return match;
         });
 
-        return clean.replace(/\\s+/g, ' ').trim();
+        return clean.replace(/\s+/g, ' ').trim();
     }
 
     function parseYmlToMenuData(xmlText) {
@@ -624,7 +630,7 @@
         const combinedMenu = [...Object.values(groupedMap), ...standaloneItems];
 
         // Желаемый порядок категорий на сайте (напитки в самом конце)
-        const categoryOrder = [\"shawarma\", \"grill\", \"snacks\", \"burgers\", \"combos\", \"drinks\"];
+        const categoryOrder = ["shawarma", "grill", "snacks", "burgers", "combos", "drinks"];
 
         return combinedMenu.sort((a, b) => {
             return categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category);
@@ -734,24 +740,24 @@
 
             let variationsHtml = '';
             if (item.variations && item.variations.length > 0) {
-                variationsHtml = `<div class=\"card-variations\">`;
+                variationsHtml = `<div class="card-variations">`;
                 item.variations.forEach((v, index) => {
                     const activeClass = index === selectedVarIndex ? 'variation-btn--active' : '';
-                    variationsHtml += `<button class=\"variation-btn ${activeClass}\" data-index=\"${index}\">${v.name}</button>`;
+                    variationsHtml += `<button class="variation-btn ${activeClass}" data-index="${index}">${v.name}</button>`;
                 });
                 variationsHtml += `</div>`;
             }
 
             card.innerHTML = `
-                <div class=\"menu-card__img-wrapper\">
-                    <img src=\"${currentImage}\" alt=\"${item.title}\" class=\"menu-card__img\" loading=\"lazy\">
+                <div class="menu-card__img-wrapper">
+                    <img src="${currentImage}" alt="${item.title}" class="menu-card__img" loading="lazy">
                 </div>
-                <div class=\"menu-card__content\">
-                    <h3 class=\"menu-card__title\">${item.title}</h3>
-                    <p class=\"menu-card__desc\">${item.description}</p>
+                <div class="menu-card__content">
+                    <h3 class="menu-card__title">${item.title}</h3>
+                    <p class="menu-card__desc">${item.description}</p>
                     ${variationsHtml}
-                    <div class=\"menu-card__footer\">
-                        <div class=\"menu-card__price\"><span class=\"price-val\">${currentPrice}</span> ₽</div>
+                    <div class="menu-card__footer">
+                        <div class="menu-card__price"><span class="price-val">${currentPrice}</span> ₽</div>
                     </div>
                 </div>
             `;
@@ -805,31 +811,36 @@
         });
     }
 
-    // Инициализация при загрузке
-    document.addEventListener('DOMContentLoaded', () => {
+    // Инициализация меню после готовности DOM (в том числе при поздней загрузке скрипта).
+    function initializeMenu() {
         const grid = document.getElementById('menu-grid');
-        if (!grid) return; // Скрипт выполняется только на странице menu.html
+        if (!grid) return;
 
-        // Пытаемся скачать файл menu.yml
         fetch(YML_FILE_URL, { cache: 'no-store' })
             .then(response => {
-                if (!response.ok) throw new Error('YML файл не найден или сервер недоступен');
+                if (!response.ok) throw new Error('YML файл не найден или сервер недоступен: ' + response.status);
                 return response.text();
             })
             .then(xmlText => {
                 const parsedData = parseYmlToMenuData(xmlText);
-                if (parsedData.length > 0) {
-                    activeMenuData = parsedData;
-                    console.log('Данные меню успешно синхронизированы с menu.yml.');
+                if (!parsedData.length) {
+                    throw new Error('В menu.yml не найдено ни одной позиции');
                 }
+                activeMenuData = parsedData;
+                console.log('Данные меню успешно синхронизированы с menu.yml:', parsedData.length, 'позиций');
                 renderMenuGrid('all');
             })
             .catch(error => {
-                console.warn('Ошибка парсинга YML. Подключена резервная копия меню:', error);
-                // Отрисует базовый массив данных, если menu.yml сломан или отсутствует
+                console.error('Не удалось загрузить menu.yml. Используется резервное меню.', error);
                 activeMenuData = [...menuTableBackup];
                 renderMenuGrid('all');
             });
-    });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeMenu, { once: true });
+    } else {
+        initializeMenu();
+    }
 
 })();
