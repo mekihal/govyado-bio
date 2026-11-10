@@ -1,5 +1,5 @@
 <?xml version="5.0" encoding="utf-8"?>
-<yml_catalog date="2026-07-02 15:46">
+<yml_catalog date="2026-11-10 20:30">
   <shop>
     <name>Говядо</name>
     <company>Говядо</company>
@@ -14,18 +14,17 @@
       <category id="3">Закуски</category>
       <category id="5">Комбо</category>
       <category id="4">Напитки</category>
+      <category id="6">Бургеры</category>
     </categories>
     
     <offers>
-      <!-- ============================================
-           КАТЕГОРИЯ: ШАУРМА (Category 1)
-           ============================================ -->
+      <!-- ============================================\n           КАТЕГОРИЯ: ШАУРМА (Category 1)\n           ============================================ -->
       
       <!-- Шаурма Классическая -->
       <offer id="sh_classic_chicken" group_id="sh_classic" available="true">
         <name>Шаурма Классическая (Курица)</name>
         <url>https://govyado.ru/menu</url>
-        <price>270</price>
+        <price>300</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://govyado.ru/assets/images/shaur.webp</picture>
@@ -35,7 +34,7 @@
       <offer id="sh_classic_pork" group_id="sh_classic" available="true">
         <name>Шаурма Классическая (Свинина)</name>
         <url>https://govyado.ru/menu</url>
-        <price>320</price>
+        <price>350</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://govyado.ru/assets/images/shaur.webp</picture>
@@ -45,7 +44,7 @@
       <offer id="sh_classic_beef" group_id="sh_classic" available="true">
         <name>Шаурма Классическая (Телятина)</name>
         <url>https://govyado.ru/menu</url>
-        <price>340</price>
+        <price>350</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://govyado.ru/assets/images/shaur.webp</picture>
@@ -55,9 +54,9 @@
 
       <!-- Шаурма Двойная -->
       <offer id="sh_xl_chicken" group_id="sh_xl" available="true">
-        <name>Шаурма Двойная (Курица)</name>
+        <name>Шаурма Двойная (Курица, 200 гр.)</name>
         <url>https://govyado.ru/menu</url>
-        <price>450</price>
+        <price>420</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://govyado.ru/assets/images/xlshaurma.webp</picture>
@@ -65,9 +64,9 @@
         <param name="Начинка">Курица</param>
       </offer>
       <offer id="sh_xl_pork" group_id="sh_xl" available="true">
-        <name>Шаурма Двойная (Свинина)</name>
+        <name>Шаурма Двойная (Свинина, 200 гр.)</name>
         <url>https://govyado.ru/menu</url>
-        <price>500</price>
+        <price>540</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://govyado.ru/assets/images/xlshaurma.webp</picture>
@@ -75,9 +74,9 @@
         <param name="Начинка">Свинина</param>
       </offer>
       <offer id="sh_xl_beef" group_id="sh_xl" available="true">
-        <name>Шаурма Двойная (Телятина)</name>
+        <name>Шаурма Двойная (Телятина, 200 гр.)</name>
         <url>https://govyado.ru/menu</url>
-        <price>500</price>
+        <price>640</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://govyado.ru/assets/images/xlshaurma.webp</picture>
@@ -89,7 +88,7 @@
       <offer id="sh_mini_chicken" group_id="sh_mini" available="true">
         <name>Шаурма Мини (Курица)</name>
         <url>https://govyado.ru/menu</url>
-        <price>190</price>
+        <price>200</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://govyado.ru/assets/images/minishaurma.webp</picture>
@@ -99,7 +98,7 @@
       <offer id="sh_mini_pork" group_id="sh_mini" available="true">
         <name>Шаурма Мини (Свинина)</name>
         <url>https://govyado.ru/menu</url>
-        <price>210</price>
+        <price>230</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://govyado.ru/assets/images/minishaurma.webp</picture>
@@ -109,7 +108,7 @@
       <offer id="sh_mini_beef" group_id="sh_mini" available="true">
         <name>Шаурма Мини (Говядина)</name>
         <url>https://govyado.ru/menu</url>
-        <price>230</price>
+        <price>250</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://govyado.ru/assets/images/minishaurma.webp</picture>
@@ -132,7 +131,7 @@
       <offer id="sh_arab_chicken" group_id="sh_arab" available="true">
         <name>Арабская в лепешке (Курица)</name>
         <url>https://govyado.ru/menu</url>
-        <price>350</price>
+        <price>310</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://govyado.ru/assets/images/arab.webp</picture>
@@ -142,7 +141,7 @@
       <offer id="sh_arab_pork" group_id="sh_arab" available="true">
         <name>Арабская в лепешке (Свинина)</name>
         <url>https://govyado.ru/menu</url>
-        <price>400</price>
+        <price>430</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://govyado.ru/assets/images/arab.webp</picture>
@@ -152,7 +151,7 @@
       <offer id="sh_arab_beef" group_id="sh_arab" available="true">
         <name>Арабская в лепешке (Говядина)</name>
         <url>https://govyado.ru/menu</url>
-        <price>400</price>
+        <price>430</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
         <picture>https://govyado.ru/assets/images/arab.webp</picture>
@@ -182,15 +181,13 @@
         <param name="Подача">С овощами</param>
       </offer>
 
-      <!-- ============================================
-           КАТЕГОРИЯ: ШАШЛЫК И ГРИЛЬ (Category 2)
-           ============================================ -->
+      <!-- ============================================\n           КАТЕГОРИЯ: ШАШЛЫК И ГРИЛЬ (Category 2)\n           ============================================ -->
       
       <!-- Шашлык по-турецки -->
       <offer id="gr_turkish_chicken" group_id="gr_turkish" available="true">
         <name>Шашлык по-турецки (100 гр./Курица)</name>
         <url>https://govyado.ru/menu</url>
-        <price>250</price>
+        <price>280</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
         <picture>https://govyado.ru/assets/images/shashlukturecki.webp</picture>
@@ -210,19 +207,29 @@
       <offer id="gr_turkish_beef" group_id="gr_turkish" available="true">
         <name>Шашлык по-турецки (100 гр./Говядина)</name>
         <url>https://govyado.ru/menu</url>
-        <price>300</price>
+        <price>350</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
         <picture>https://govyado.ru/assets/images/shashlukturecki.webp</picture>
         <description>Подается в лепешке — сочный шашлык с фирменным соусом и репчатым луком с зеленью.</description>
         <param name="Мясо">Говядина</param>
       </offer>
+      <offer id="gr_turkish_pork" group_id="gr_turkish" available="true">
+        <name>Шашлык по-турецки (100 гр./Свинина)</name>
+        <url>https://govyado.ru/menu</url>
+        <price>330</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <picture>https://govyado.ru/assets/images/shashlukturecki.webp</picture>
+        <description>Подается в лепешке — сочный шашлык с фирменным соусом и репчатым луком с зеленью.</description>
+        <param name="Мясо">Свинина</param>
+      </offer>
 
       <!-- Шашлык на углях -->
       <offer id="gr_classic_chicken" group_id="gr_classic" available="true">
         <name>Шашлык на углях (100 гр./Курица)</name>
         <url>https://govyado.ru/menu</url>
-        <price>220</price>
+        <price>250</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
         <picture>https://govyado.ru/assets/images/shashluk.webp</picture>
@@ -232,7 +239,7 @@
       <offer id="gr_classic_pork" group_id="gr_classic" available="true">
         <name>Шашлык на углях (100 гр./Свинина)</name>
         <url>https://govyado.ru/menu</url>
-        <price>300</price>
+        <price>330</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
         <picture>https://govyado.ru/assets/images/shashluksvinina.webp</picture>
@@ -242,7 +249,7 @@
       <offer id="gr_classic_beef" group_id="gr_classic" available="true">
         <name>Шашлык на углях (100 гр./Телятина)</name>
         <url>https://govyado.ru/menu</url>
-        <price>350</price>
+        <price>380</price>
         <currencyId>RUB</currencyId>
         <categoryId>2</categoryId>
         <picture>https://govyado.ru/assets/images/shashluktelyatina.webp</picture>
@@ -261,9 +268,7 @@
         <description>Цельная курица гриль с аппетитной хрустящей корочкой.</description>
       </offer>
 
-      <!-- ============================================
-           КАТЕГОРИЯ: ЗАКУСКИ (Category 3)
-           ============================================ -->
+      <!-- ============================================\n           КАТЕГОРИЯ: ЗАКУСКИ (Category 3)\n           ============================================ -->
       
       <!-- Хот-дог -->
       <offer id="sn_hotdog_classic" group_id="sn_hotdog" available="true">
@@ -277,13 +282,13 @@
         <param name="Размер">Классический</param>
       </offer>
       <offer id="sn_hotdog_double" group_id="sn_hotdog" available="true">
-        <name>Хот-дог (Двойной)</name>
+        <name>Хот-дог (Двойной в лаваше)</name>
         <url>https://govyado.ru/menu</url>
-        <price>260</price>
+        <price>280</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
         <picture>https://govyado.ru/assets/images/dbhotdog.webp</picture>
-        <description>Две горячих сосисек с огурчиком, кетчупом, горчицей и жареным луком фри в лаваше.</description>
+        <description>Две горячих сосисок с огурчиком, кетчупом, горчицей и жареным луком фри в лаваше.</description>
         <param name="Размер">Двойной</param>
       </offer>
 
@@ -335,7 +340,7 @@
       <offer id="sn_strips" available="true">
         <name>Куриные стрипсы (100 гр.)</name>
         <url>https://govyado.ru/menu</url>
-        <price>150</price>
+        <price>140</price>
         <currencyId>RUB</currencyId>
         <categoryId>3</categoryId>
         <picture>https://govyado.ru/assets/images/chickenstripes.webp</picture>
@@ -354,7 +359,7 @@
       </offer>
 
       <!-- Картофельные конусы -->
-      <offer id="sn_potato_cones" available="true">
+      <offer id="sn_potato_cones" group_id="sn_potato" available="true">
         <name>Картофельные конусы (100 гр.)</name>
         <url>https://govyado.ru/menu</url>
         <price>150</price>
@@ -365,7 +370,7 @@
       </offer>
 
       <!-- Картофельные хэшбраун -->
-      <offer id="sn_hashbraun" available="true">
+      <offer id="sn_hashbraun" group_id="sn_potato" available="true">
         <name>Картофельные хэшбраун (3 шт.)</name>
         <url>https://govyado.ru/menu</url>
         <price>130</price>
@@ -408,9 +413,55 @@
         <description>Хрустящее тесто снаружи, внутри курица с зеленью.</description>
       </offer>
 
-      <!-- ============================================
-           КАТЕГОРИЯ: НАПИТКИ (Category 4)
-           ============================================ -->
+      <!-- ============================================\n           КАТЕГОРИЯ: КОМБО (Category 5)\n           ============================================ -->
+      
+      <!-- Комбо 1 -->
+      <offer id="cm_fss" available="true">
+        <name>Картофель фри + мини-сосиски и соус томатный</name>
+        <url>https://govyado.ru/menu</url>
+        <price>300</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://govyado.ru/assets/images/combo1.webp</picture>
+        <description>Очень вкусное комбо на обед!</description>
+      </offer>
+
+      <!-- Комбо 2 -->
+      <offer id="cm_pcs" available="true">
+        <name>Картофельные конусы + куриный попкорн и соус</name>
+        <url>https://govyado.ru/menu</url>
+        <price>300</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>5</categoryId>
+        <picture>https://govyado.ru/assets/images/combo2.webp</picture>
+        <description>Киношное комбо: будто на фильм!</description>
+      </offer>
+
+      <!-- ============================================\n           КАТЕГОРИЯ: БУРГЕРЫ (Category 6 - Новинки)\n           ============================================ -->
+      
+      <!-- Гамбургер -->
+      <offer id="br_gamburger" available="true">
+        <name>Гамбургер</name>
+        <url>https://govyado.ru/menu</url>
+        <price>300</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>6</categoryId>
+        <picture>https://govyado.ru/assets/images/burger.webp</picture>
+        <description>Классический гамбургер с сочной котлетой.</description>
+      </offer>
+
+      <!-- Чизбургер -->
+      <offer id="br_cheeseburger" available="true">
+        <name>Чизбургер</name>
+        <url>https://govyado.ru/menu</url>
+        <price>350</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>6</categoryId>
+        <picture>https://govyado.ru/assets/images/cheeseburger.webp</picture>
+        <description>Гамбургер с нежным сыром и сочной котлетой.</description>
+      </offer>
+
+      <!-- ============================================\n           КАТЕГОРИЯ: НАПИТКИ (Category 4)\n           ============================================ -->
       
       <!-- Освежающие напитки -->
       <offer id="dr_soft_dobry" group_id="dr_soft" available="true">
@@ -515,32 +566,6 @@
         <categoryId>4</categoryId>
         <picture>https://govyado.ru/assets/images/tea.webp</picture>
         <description>Ароматный горячий чай от Greenfield с добавлением сочного лимона.</description>
-      </offer>
-
-      <!-- ============================================
-           КАТЕГОРИЯ: КОМБО (Category 5)
-           ============================================ -->
-      
-      <!-- Комбо 1 -->
-      <offer id="cm_fss" available="true">
-        <name>Картофель фри + мини-сосиски и соус томатный</name>
-        <url>https://govyado.ru/menu</url>
-        <price>300</price>
-        <currencyId>RUB</currencyId>
-        <categoryId>5</categoryId>
-        <picture>https://govyado.ru/assets/images/combo1.webp</picture>
-        <description>Очень вкусное комбо на обед!</description>
-      </offer>
-
-      <!-- Комбо 2 -->
-      <offer id="cm_pcs" available="true">
-        <name>Картофельные конусы + куриный попкорн и соус</name>
-        <url>https://govyado.ru/menu</url>
-        <price>300</price>
-        <currencyId>RUB</currencyId>
-        <categoryId>5</categoryId>
-        <picture>https://govyado.ru/assets/images/combo2.webp</picture>
-        <description>Киношное комбо: будто на фильм!</description>
       </offer>
     </offers>
   </shop>
